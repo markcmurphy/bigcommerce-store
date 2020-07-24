@@ -33,7 +33,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <Router basename="/bigcommerce-store">
+    <Router>
       <ApolloProvider client={client}>
         <div className="App">
           <h1>Mark Murphy's BigCommerce Store</h1>
