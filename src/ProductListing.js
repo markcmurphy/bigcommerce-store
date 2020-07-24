@@ -1,12 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useLocation,
-  Link,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function ProductListing() {
   const PRODUCT_QUERY = gql`
