@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bigcommerce-store/static/css/main.103a0ec6.chunk.css",
+    "main.js": "/bigcommerce-store/static/js/main.a67f6972.chunk.js",
+    "main.js.map": "/bigcommerce-store/static/js/main.a67f6972.chunk.js.map",
+    "runtime-main.js": "/bigcommerce-store/static/js/runtime-main.21875715.js",
+    "runtime-main.js.map": "/bigcommerce-store/static/js/runtime-main.21875715.js.map",
+    "static/js/2.26c0a5d0.chunk.js": "/bigcommerce-store/static/js/2.26c0a5d0.chunk.js",
+    "static/js/2.26c0a5d0.chunk.js.map": "/bigcommerce-store/static/js/2.26c0a5d0.chunk.js.map",
+    "index.html": "/bigcommerce-store/index.html",
+    "precache-manifest.772941203ee3014726f44d022ddf3ed5.js": "/bigcommerce-store/precache-manifest.772941203ee3014726f44d022ddf3ed5.js",
+    "service-worker.js": "/bigcommerce-store/service-worker.js",
+    "static/css/main.103a0ec6.chunk.css.map": "/bigcommerce-store/static/css/main.103a0ec6.chunk.css.map",
+    "static/js/2.26c0a5d0.chunk.js.LICENSE.txt": "/bigcommerce-store/static/js/2.26c0a5d0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.21875715.js",
+    "static/js/2.26c0a5d0.chunk.js",
+    "static/css/main.103a0ec6.chunk.css",
+    "static/js/main.a67f6972.chunk.js"
+  ]
+}
