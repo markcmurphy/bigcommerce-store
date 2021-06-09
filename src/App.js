@@ -11,7 +11,7 @@ import ProductListing from "./ProductListing";
 import SingleProductDetails from "./SingleProductDetails";
 
 const httpLink = createHttpLink({
-  uri: "https://bigcommerce-mmurphy.mybigcommerce.com/graphql",
+  uri: "https://store-29iql3rwa6.mybigcommerce.com/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
