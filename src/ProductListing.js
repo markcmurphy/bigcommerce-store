@@ -1,6 +1,6 @@
-import React from "react";
-import { useQuery, gql } from "@apollo/client";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 export default function ProductListing() {
   const PRODUCT_QUERY = gql`
@@ -32,7 +32,7 @@ export default function ProductListing() {
   const { loading, error, data } = useQuery(PRODUCT_QUERY);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :</p>;
+  if (error) return <p>Error</p>;
 
   return data.site.products.edges.map((product) => (
     <ul key={product.node.entityId}>

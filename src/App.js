@@ -1,19 +1,15 @@
-import React from "react";
-import "./App.css";
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import { ApolloProvider } from "@apollo/client";
-
-import ProductListing from "./ProductListing";
-import SingleProductDetails from "./SingleProductDetails";
+import React from 'react';
+import './App.css';
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProductListing from './ProductListing';
+import SingleProductDetails from './SingleProductDetails';
 
 const httpLink = createHttpLink({
-  uri: "https://store-29iql3rwa6.mybigcommerce.com/graphql",
+  uri: process.env.REACT_APP_BIGCOMMERCE_URI,
 });
-
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
 
@@ -28,7 +24,14 @@ const authLink = setContext((_, { headers }) => {
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    // https://www.apollographql.com/docs/react/caching/cache-configuration/#customizing-cache-ids
+    typePolicies: {
+      Site: {
+        keyFields: [],
+      },
+    },
+  }),
 });
 
 function App() {
@@ -36,17 +39,11 @@ function App() {
     <Router>
       <ApolloProvider client={client}>
         <div className="App">
-          <h1>Mark Murphy's BigCommerce Store</h1>
-          <Switch>
-            <Route exact path="/" render={() => <ProductListing />} />
-            <Route
-              exact
-              path="/product/:id"
-              render={({ match }) => (
-                <SingleProductDetails id={match.params.id} />
-              )}
-            />
-          </Switch>
+          <h1>BigCommerce Store</h1>
+          <Routes>
+            <Route path="/" element={<ProductListing />} />
+            <Route path="/product/:id" element={<SingleProductDetails />} />
+          </Routes>
         </div>
       </ApolloProvider>
     </Router>
